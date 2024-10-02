@@ -5,11 +5,11 @@ import { TipoProduto } from "@/types"
 
 export default function Produtos() {
 
-    const [produtos, setProdutos] = useState<TipoProduto>([]);
+    const [produtos, setProdutos] = useState<TipoProduto[]>([]);
 
     useEffect(() => {
       const consumoApi = async () => {
-        const response = await fetch("http://localhost:3001/api/base-produtos");
+        const response = await fetch("http://localhost:3000/api/base-produtos");
         const dados = await response.json();
         setProdutos(dados);
         }
